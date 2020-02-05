@@ -1,10 +1,9 @@
-
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 })
-
-readline.question(`Would you like a cookie?`, (response) => {
+console.log("Would you like a cookie?")
+readline.question(``, (response) => {
   if(response == "yes" || response == "y") {
     console.log("Too bad");
     console.log("I tried to get it to open Rick Astleys Never Gonna Give You Up but couldnt figure it out. Pretend you got Rick Rolled");
