@@ -6,7 +6,7 @@ var app = new Vue({
 
 });
 
-addText() {
+function addText() {
   var text = document.createElement("P");
   text.innerText = "This will be a new task";
   document.body.appendChild(text);
