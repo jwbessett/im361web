@@ -6,13 +6,26 @@
     <title>Problematics</title>
   </head>
   <body>
-      <button onclick="addText()">Add div with text</button>
-    <script>
-    function addText() {
-      var text = document.createElement("P");
-      text.innerText = "This will be a new task";
-      document.body.appendChild(text);
-    }
-    </script>
+    <header>
+      <h1>Tasks</h1>
+      <nav>
+        <ul>
+          <li>Priority</li>
+          <li>Secondary</li>
+        </ul>
+      </nav>
+    </header>
+    <main id="app">
+      <div id="taskOne">
+        <h2>{{task1Label}}</h2>
+        <p>{{task1Description}}</p>
+        <ul>
+          <li>{{task1Sub1}}</li>
+          <li>{{task1Sub2}}</li>
+          <li>{{task1Sub3}}</li>
+        </ul>
+      </div>
+    </main>
+    <script src="dist/main.js" type="text/javascript"></script>
   </body>
 </html>
