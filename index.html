@@ -7,22 +7,26 @@
   </head>
   <body>
     <header>
-      <h1>Tasks</h1>
+      <h1>TOAST</h2>
+      <h2>Tasks</h2>
       <nav>
         <ul>
-          <li>Priority</li>
-          <li>Secondary</li>
+          <li><a>Priority</a></li>
+          <li><a>Secondary</a></li>
         </ul>
       </nav>
     </header>
     <main id="app">
       <div id="taskOne">
-        <h2>{{task1Label}}</h2>
+        <h3>{{task1Label}}</h3>
         <p>{{task1Description}}</p>
         <ul>
-          <li>{{task1Sub1}}</li>
-          <li>{{task1Sub2}}</li>
-          <li>{{task1Sub3}}</li>
+          <input type="checkbox" name="task1">
+          <label for="task1">{{task1Sub1}}</label><br>
+          <input type="checkbox" name="task2">
+          <label for="task2">{{task1Sub2}}</label><br>
+          <input type="checkbox" name="task3">
+          <label for="task3">{{task1Sub3}}</label><br>
         </ul>
       </div>
     </main>
