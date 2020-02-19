@@ -4,11 +4,15 @@ import "./style.css";
 var app = new Vue({
   el: '#app',
   data: {
-    task1Label: 'Do Laundry',
+    pageName: 'Home',
     task1Description: 'Take the dirty laundry down to the laundry room and put it in th washer',
-    task1Sub1: 'Wash clothes',
-    task1Sub2: 'Dry clothes',
-    task1Sub3: 'Fold clothes'
+    tasks: ["Task 1", "Task 2"],
+    subTasks: ["Wash Clothes", "Dry Clothes"],
+    isHiddenPrimary: false,
+    isHiddenSecondary: true
+  },
+  computed: {
+
   }
 });
 

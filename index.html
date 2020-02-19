@@ -3,33 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Problematics</title>
+    <title>TOAST</title>
   </head>
   <body>
+    <div id="app">
     <header>
       <h1>TOAST</h2>
       <h2>Tasks</h2>
       <nav>
         <ul>
-          <li><a>Priority</a></li>
-          <li><a>Secondary</a></li>
+          <li><a v-on:click="isHiddenPrimary = !isHiddenPrimary">Priority</a></li>
+          <li><a v-on:click="isHiddenSecondary = !isHiddenSecondary">Secondary</a></li>
         </ul>
       </nav>
     </header>
-    <main id="app">
+    <main>
+      <template v-if="!isHiddenPrimary">
       <div id="taskOne">
         <h3>{{task1Label}}</h3>
         <p>{{task1Description}}</p>
-        <ul>
-          <input type="checkbox" name="task1">
-          <label for="task1">{{task1Sub1}}</label><br>
-          <input type="checkbox" name="task2">
-          <label for="task2">{{task1Sub2}}</label><br>
-          <input type="checkbox" name="task3">
-          <label for="task3">{{task1Sub3}}</label><br>
+        <ul v-for="task in tasks">
+            <input type="checkbox" name={{task}}>
+            <label for={{task}}>{{task}}</label><br>
         </ul>
-      </div>
+        </div>
+      </template>
+      <template v-if="!isHiddenSecondary">
+        <div id="taskOneSecondary">
+          <h3>worky please</h3>
+          <p>{{task1Description}}</p>
+          <ul v-for="task in tasks">
+              <input type="checkbox" name={{task}}>
+              <label for={{task}}>{{task}}</label><br>
+          </ul>
+        </div>
+      </template>
     </main>
     <script src="dist/main.js" type="text/javascript"></script>
+    </div>
   </body>
 </html>
