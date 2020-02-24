@@ -1,5 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
 header {
   background-color: #f0b660;
+  width: 100%;
+}
+
+header h1 {
+  display: inline;
+}
+
+header h2 {
+  display: inline;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 header ul {
@@ -12,6 +33,7 @@ header ul {
 
 header li {
   float: left;
+  width: 10em;
 }
 
 header li a {
@@ -28,10 +50,17 @@ header li a:hover {
 
 body {
   margin: 0;
+  margin-top: 0;
   font-family: impact;
+  background-color: #f0b660;
+}
+
+.task {
+  box-shadow: 0px 5px 5px #d47f00;
+  padding: 15px;
 }
 
 #taskOne {
-  padding: 5px;
+
   background-color: #ffaf38;
 }

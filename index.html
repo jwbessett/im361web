@@ -12,32 +12,30 @@
       <h2>Tasks</h2>
       <nav>
         <ul>
-          <li><a v-on:click="isHiddenPrimary = !isHiddenPrimary">Priority</a></li>
-          <li><a v-on:click="isHiddenSecondary = !isHiddenSecondary">Secondary</a></li>
+          <li><a v-on:click="currentPage = 'primary'">Priority</a></li>
+          <li><a v-on:click="currentPage = 'secondary'">Secondary</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <template v-if="!isHiddenPrimary">
-      <div id="taskOne">
-        <h3>{{task1Label}}</h3>
+    <main v-bind:hidden="currentPage != 'primary'">
+      <div id="taskOne" class="task">
+        <h3>Task 1</h3>
         <p>{{task1Description}}</p>
         <ul v-for="task in tasks">
             <input type="checkbox" name={{task}}>
             <label for={{task}}>{{task}}</label><br>
         </ul>
         </div>
-      </template>
-      <template v-if="!isHiddenSecondary">
-        <div id="taskOneSecondary">
-          <h3>worky please</h3>
+      </main>
+      <main v-bind:hidden="currentPage != 'secondary'">
+        <div id="taskOneSecondary" class="task">
+          <h3>worky</h3>
           <p>{{task1Description}}</p>
           <ul v-for="task in tasks">
               <input type="checkbox" name={{task}}>
               <label for={{task}}>{{task}}</label><br>
           </ul>
         </div>
-      </template>
     </main>
     <script src="dist/main.js" type="text/javascript"></script>
     </div>
