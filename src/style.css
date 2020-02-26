@@ -10,6 +10,7 @@
 header {
   background-color: #f0b660;
   width: 100%;
+  padding-bottom: 7px;
 }
 
 header h1 {
@@ -57,6 +58,7 @@ body {
 }
 
 .task {
+  list-style-type: none;
   box-shadow: 0px 5px 5px #d47f00;
   padding: 15px;
 }
@@ -64,4 +66,16 @@ body {
 #taskOne {
 
   background-color: #ffaf38;
+}
+
+#button {
+  padding: 3px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#input {
+  padding: 3px;
+  border-radius: 5px;
+  background-color: white;
 }
