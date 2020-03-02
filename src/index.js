@@ -8,21 +8,23 @@ var app = new Vue({
     tasks: [],
     taskName: "",
     secondTasks: [],
-    secondTaskName: ""
+    secondTaskName: "",
+    subTask: "",
+    secondSubTask: ""
   },
   methods: {
-    addTask: function(name) {
+    addTask: function(name, subName) {
       var subTask={
         checked: false,
-        name: "Task"
+        name: subName
       }
       this.tasks.push({name:name, subTasks:[subTask]})
     },
 
-    addSecondTask: function(secondName) {
+    addSecondTask: function(secondName, secondSubName) {
       var secondSubTask={
         checked: false,
-        secondName: "Task"
+        secondName: secondSubName
       }
       this.secondTasks.push({secondName:secondName, secondSubTasks:[secondSubTask]})
     }

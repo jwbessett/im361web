@@ -12,8 +12,8 @@
       <h2>Tasks</h2>
       <nav>
         <ul>
-          <li><a v-on:click="currentList = 'primary'">Priority</a></li>
-          <li><a v-on:click="currentList = 'secondary'">Secondary</a></li>
+          <li><a v-on:click="currentList = 'primary'" v-bind:class="{isSelected:currentList=='primary'}">Primary</a></li>
+          <li><a v-on:click="currentList = 'secondary'" v-bind:class="{isSelected:currentList=='secondary'}">Secondary</a></li>
         </ul>
       </nav>
     </header>
@@ -32,7 +32,9 @@
     <div>
       <p>Task name</p>
       <input id="input" v-model="taskName">
-      <button v-on:click="addTask(taskName)" id="button">Add Task</button>
+      <p>Sub task name</p>
+      <input id="input" v-model="subTask">
+      <button v-on:click="addTask(taskName,subTask)" id="button">Add Task</button>
     </div>
       </main>
     <main v-bind:hidden="currentList != 'secondary'">
@@ -50,7 +52,9 @@
     <div>
     <p>Task name</p>
     <input id="input" v-model="secondTaskName">
-    <button v-on:click="addSecondTask(secondTaskName)" id="button">Add Task</button>
+    <p>Sub task name</p>
+    <input id="input" v-model="secondSubTask">
+    <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" id="button">Add Task</button>
   </div>
     </main>
     </div>
