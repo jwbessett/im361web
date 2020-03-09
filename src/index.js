@@ -10,7 +10,8 @@ var app = new Vue({
     secondTasks: [],
     secondTaskName: "",
     subTask: "",
-    secondSubTask: ""
+    secondSubTask: "",
+    modalOpened: false
   },
   methods: {
     addTask: function(name, subName) {
@@ -18,7 +19,10 @@ var app = new Vue({
         checked: false,
         name: subName
       }
-      this.tasks.push({name:name, subTasks:[subTask]})
+      this.tasks.push({name:name, subTasks:[subTask]}),
+      this.taskName="",
+      this.subTask="",
+      this.modalOpened = false
     },
 
     addSecondTask: function(secondName, secondSubName) {
@@ -26,7 +30,13 @@ var app = new Vue({
         checked: false,
         secondName: secondSubName
       }
-      this.secondTasks.push({secondName:secondName, secondSubTasks:[secondSubTask]})
+      this.secondTasks.push({secondName:secondName, secondSubTasks:[secondSubTask]}),
+      this.secondTaskName="",
+      this.secondSubTask=""
+    },
+
+    openModal: function() {
+      this.modalOpened = true
     }
   }
 });

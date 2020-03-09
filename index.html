@@ -21,7 +21,7 @@
       <ul>
       <li v-for="task in tasks" id="taskOne" class="task">
         <h3>{{task.name}}</h3>
-        <ul>
+        <ul v-bind:hidden="subTask != ''">
         <li v-for="subTask in task.subTasks">
             <input type="checkbox" v-model="subTask.checked">
             <label>{{subTask.name}}</label>
@@ -29,14 +29,17 @@
       </ul>
       </li>
     </ul>
-    <div>
-      <p>Task name</p>
-      <input id="input" v-model="taskName">
-      <p>Sub task name</p>
-      <input id="input" v-model="subTask">
-      <button v-on:click="addTask(taskName,subTask)" id="button">Add Task</button>
-    </div>
-      </main>
+    <div class="modal" v-bind:hidden="modalOpened != true">
+      <div class="modalContent">
+        <p>Task name</p>
+        <input class="input" v-model="taskName">
+        <p>Sub task name</p>
+        <input class="input" v-model="subTask">
+        <button v-on:click="addTask(taskName,subTask)" class="button">Add Task</button>
+        </div>
+      </div>
+      <div class="openModalButton" v-on:click="openModal">+</div>
+    </main>
     <main v-bind:hidden="currentList != 'secondary'">
       <ul>
       <li v-for="secondTask in secondTasks" id="taskOne" class="task">
@@ -48,14 +51,16 @@
         </li>
       </ul>
       </li>
-    </ul>
-    <div>
-    <p>Task name</p>
-    <input id="input" v-model="secondTaskName">
-    <p>Sub task name</p>
-    <input id="input" v-model="secondSubTask">
-    <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" id="button">Add Task</button>
-  </div>
+      </ul>
+      <div>
+      <div class="modalContent">
+      <p>Task name</p>
+      <input class="input" v-model="secondTaskName">
+      <p>Sub task name</p>
+      <input class="input" v-model="secondSubTask">
+      <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
+      </div>
+      <div class="openModalButton" v-on:click="openModal">+</div>
     </main>
     </div>
     <script src="dist/main.js" type="text/javascript"></script>
