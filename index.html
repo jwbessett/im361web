@@ -37,6 +37,7 @@
         <input class="input" v-model="taskName">
         <p>Sub task name</p>
         <input class="input" v-model="subTask">
+        <button v-on:click="addSubTask(taskName,subTask)" class="button">Add SubTask</button>
         <button v-on:click="addTask(taskName,subTask)" class="button">Add Task</button>
         </div>
       </div>

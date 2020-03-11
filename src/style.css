@@ -99,19 +99,19 @@ body {
 }
 
 .toasted0 {
-  background-color: white !important;
+  background-color: white;
 }
 
 .toasted1 {
-  background-color: blue !important;
+  background-color: blue;
 }
 
 .toasted2 {
-  background-color: purple !important;
+  background-color: purple;
 }
 
 .toasted3 {
-  background-color: brown !important;
+  background-color: brown;
 }
 
 .button {
