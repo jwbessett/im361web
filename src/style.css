@@ -69,12 +69,17 @@ body {
 .task {
   list-style-type: none;
   box-shadow: 5px 5px 5px #d47f00;
-  padding: 15px;
+  padding: 20px;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   color: #402600;
+  border: 10px solid brown;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #taskOne {
