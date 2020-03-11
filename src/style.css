@@ -6,17 +6,21 @@
   vertical-align: baseline;
   background: transparent;
   list-style-type: none;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
-  background-color: #f0b660;
+  background-color: #692c03;
   width: 100%;
-  padding-bottom: 7px;
 }
 
 header h1 {
-  padding-left: 15px;
+  padding-left: 20px;
   display: inline;
+  font-size: 50px;
+  color: #e08326;
 }
 
 header h2 {
@@ -32,7 +36,6 @@ header ul {
   padding: 0;
   overflow: hidden;
   background-color: #d47f00;
-  box-shadow: 0px 5px 5px #d47f00;
 }
 
 header li {
@@ -49,7 +52,7 @@ header li a {
 }
 
 header li a:hover {
-  background-color: #f0b660;
+  background-color: #ffaf38;
 }
 
 body {
@@ -60,13 +63,18 @@ body {
 }
 
 .isSelected {
-  background-color: #ffaf38;
+  background-color: #f0b660;
 }
 
 .task {
   list-style-type: none;
-  box-shadow: 0px 5px 5px #d47f00;
+  box-shadow: 5px 5px 5px #d47f00;
   padding: 15px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  color: #402600;
 }
 
 #taskOne {
@@ -94,6 +102,10 @@ body {
   width: 500px;
   border: 10px solid brown;
   background-color: #f0b660;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .modalContent {
@@ -101,12 +113,18 @@ body {
 }
 
 .openModalButton {
+  color: #402600;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   text-align: center;
   font-size: 60px;
   border: 5px solid brown;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   width: 75px;
   height: 75px;
+  box-shadow: 5px 5px 5px #d47f00;
 }
