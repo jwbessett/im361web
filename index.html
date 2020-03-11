@@ -7,6 +7,7 @@
   </head>
   <body>
     <div id="app">
+      <div id="modalBackground" v-bind:hidden="modalOpened != true"></div>
     <header>
       <h1>TOAST</h2>
       <nav>
@@ -16,9 +17,11 @@
         </ul>
       </nav>
     </header>
+    <div id="pageBackground">
     <main v-bind:hidden="currentList != 'primary'">
+      <p class="noTaskText" v-bind:hidden="noTasks == true">You do not have any tasks! Click the button to add a task!</p>
       <ul>
-      <li v-for="task in tasks" id="taskOne" class="task">
+      <li v-for="task in tasks" id="taskOne" class="task" v-bind:class="'toasted' + toastLevel(task)">
         <h3>{{task.name}}</h3>
         <ul v-bind:hidden="subTask != ''">
         <li v-for="subTask in task.subTasks">
@@ -40,6 +43,7 @@
       <div class="openModalButton" v-on:click="openModal">+</div>
     </main>
     <main v-bind:hidden="currentList != 'secondary'">
+      <p class="noTaskText" v-bind:hidden="noTasksSecond == true">You do not have any tasks! Click the button to add a task!</p>
       <ul>
       <li v-for="secondTask in secondTasks" id="taskOne" class="task">
         <h3>{{secondTask.secondName}}</h3>
@@ -51,7 +55,7 @@
       </ul>
       </li>
       </ul>
-      <div>
+      <div class="modal" v-bind:hidden="modalOpened != true">
       <div class="modalContent">
       <p>Task name</p>
       <input class="input" v-model="secondTaskName">
@@ -59,8 +63,10 @@
       <input class="input" v-model="secondSubTask">
       <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
       </div>
+    </div>
       <div class="openModalButton" v-on:click="openModal">+</div>
     </main>
+  </div>
     </div>
     <script src="dist/main.js" type="text/javascript"></script>
   </body>
