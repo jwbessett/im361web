@@ -28,7 +28,8 @@
             <input type="checkbox" v-model="subTask.checked">
             <label>{{subTask.name}}</label>
         </li>
-      </ul>
+        </ul>
+        <button v-on:click="removeTask" class="button">Remove Task</button>
       </li>
     </ul>
     <div class="modal" v-bind:hidden="modalOpened != true">
@@ -54,6 +55,7 @@
             <label>{{secondSubTask.secondName}}</label>
         </li>
       </ul>
+      <button v-on:click="removeSecondTask" class="button">Remove Task</button>
       </li>
       </ul>
       <div class="modal" v-bind:hidden="modalOpened != true">
@@ -62,6 +64,7 @@
       <input class="input" v-model="secondTaskName">
       <p>Sub task name</p>
       <input class="input" v-model="secondSubTask">
+      <button v-on:click="addSecondSubTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
       <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
       </div>
     </div>

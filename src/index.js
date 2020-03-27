@@ -28,6 +28,14 @@ var app = new Vue({
       this.noTasks = true
     },
 
+    addSubTask: function(subname) {
+
+    },
+
+    removeTask: function(task) {
+      this.events.splice(this.tasks.indexOf(task),1)
+    },
+
     addSecondTask: function(secondName, secondSubName) {
       var secondSubTask={
         checked: false,
@@ -38,6 +46,10 @@ var app = new Vue({
       this.secondSubTask="",
       this.modalOpened = false,
       this.noTasksSecond = true
+    },
+
+    removeSecondTask: function(task) {
+      this.events.splice(this.secontTasks.indexOf(secondTask),1)
     },
 
     openModal: function() {
