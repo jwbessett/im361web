@@ -16,12 +16,8 @@ var app = new Vue({
     noTasksSecond: false
   },
   methods: {
-    addTask: function(name, subName) {
-      var subTask={
-        checked: false,
-        name: subName
-      }
-      this.tasks.push({name:name, subTasks:[subTask]}),
+    addTask: function(name) {
+      this.tasks.push({name:name}),
       this.taskName="",
       this.subTask="",
       this.modalOpened = false,
@@ -29,27 +25,35 @@ var app = new Vue({
     },
 
     addSubTask: function(subname) {
-
+      var subTask={
+        checked: false,
+        name: subName
+      }
+      this.tasks.push({subTasks:[subTask]})
     },
 
     removeTask: function(task) {
       this.events.splice(this.tasks.indexOf(task),1)
     },
 
-    addSecondTask: function(secondName, secondSubName) {
-      var secondSubTask={
-        checked: false,
-        secondName: secondSubName
-      }
-      this.secondTasks.push({secondName:secondName, secondSubTasks:[secondSubTask]}),
+    addSecondTask: function(secondName) {
+      this.secondTasks.push({secondName:secondName}),
       this.secondTaskName="",
       this.secondSubTask="",
       this.modalOpened = false,
       this.noTasksSecond = true
     },
 
+    addSecondSubTask: function(secondSubname) {
+      var secondSubTask={
+        checked: false,
+        secondName: secondSubName
+      }
+      this.tasks.push({secondSubTasks:[secondSubTask]})
+    },
+
     removeSecondTask: function(task) {
-      this.events.splice(this.secontTasks.indexOf(secondTask),1)
+      this.events.splice(this.secondTasks.indexOf(secondTask),1)
     },
 
     openModal: function() {

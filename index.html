@@ -38,8 +38,8 @@
         <input class="input" v-model="taskName">
         <p>Sub task name</p>
         <input class="input" v-model="subTask">
-        <button v-on:click="addSubTask(taskName,subTask)" class="button">Add SubTask</button>
-        <button v-on:click="addTask(taskName,subTask)" class="button">Add Task</button>
+        <button v-on:click="addSubTask(subTask)" class="button">Add SubTask</button>
+        <button v-on:click="addTask(taskName)" class="button">Add Task</button>
         </div>
       </div>
       <div class="openModalButton" v-on:click="openModal">+</div>
@@ -64,8 +64,8 @@
       <input class="input" v-model="secondTaskName">
       <p>Sub task name</p>
       <input class="input" v-model="secondSubTask">
-      <button v-on:click="addSecondSubTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
-      <button v-on:click="addSecondTask(secondTaskName,secondSubTask)" class="button">Add Task</button>
+      <button v-on:click="addSecondSubTask(secondSubTask)" class="button">Add SubTask</button>
+      <button v-on:click="addSecondTask(secondTaskName)" class="button">Add Task</button>
       </div>
     </div>
       <div class="openModalButton" v-on:click="openModal">+</div>
